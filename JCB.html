@@ -1,0 +1,505 @@
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.6.2/rellax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.css" />
+    <script>
+      $(document).ready(function(){
+        $("#wrapper-arrow-down").click(function(){
+          $a=$("#main-description").offset().top;
+          $('body').animate({scrollTop:$a},1000);
+        });
+      });
+
+      function show_navigation(){
+        document.getElementById("navigation").style.height="100%";
+      }
+
+      function close_navigation(){
+        document.getElementById("navigation").style.height="0";
+      }
+
+      window.onscroll = function(){
+        if(document.body.scrollTop>270)
+        {
+          var a = document.querySelector("#bottom-line");
+          a.style.borderColor="#000";
+          a.style.animation="1.5s disappear";
+        }
+      };
+    </script>
+    <style>
+      @font-face { font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 700;
+      src: url("https://font-public.canva.com/YACgEQNAr7w/0/Montserrat-Bold.woff") format("woff"); }
+
+      @font-face {font-family: "Playlist Script";
+      font-style: normal;
+      font-weight: 400;
+      src: url("https://font-public.canva.com/YACgESFItrk/0/Playlist-Script.woff") format("woff");
+      }
+
+      body{padding:0;
+      margin:0;
+      }
+
+      /* ID of image */
+      #main{height:auto;
+      width:100%;
+      position: relative;
+      background-image: url("https://static.pexels.com/photos/533325/pexels-photo-533325.jpeg");
+      background-size: cover;
+      min-width: 300px;
+      max-width: 1920px;
+      }
+
+      .back{height:100%;
+      width:100%;
+      background-color: rgba(0,0,0,0.6);
+      }
+
+      /*Wrapper div of JCB and description*/
+      #head{height:70%;
+      width:80%;
+      position: absolute;
+      top:20%;
+      left:5%;
+      transform: translateY(-20%);
+      }
+
+      /* Class of description */
+      .brand{height:50%;
+      width:50%;
+      font-family: "Montserrat";
+      }
+
+      #company{font-family: "Montserrat";
+      font-size:calc(12px + (25 - 12)*(100vw - 300px) / (800 - 300));
+      color:#FFF;}
+
+      #motto{font-family: "Montserrat";
+      font-size:calc(30px + (60 - 30)*(100vw - 300px) / (800 - 300));
+      color:#ffec4f;
+      }
+
+      .brand:nth-child(2){display: flex;
+      align-items:flex-end;}
+
+      #name{font-family: "Montserrat";
+      font-size: calc(8px + (25 - 12)*(100vw - 300px) / (800 - 300));
+      color: #FFF;
+      }
+
+      /* Horizontal line below name */
+      #head hr{color:#ffec4f;
+      width:80%;
+      margin-top:2%;}
+
+      /* Arrow code */
+      #arrow-down{height: 7%;
+      width:3.5%;
+      position: absolute;
+      top:70%;
+      left:50%;
+      transform: translate(-50%,-95%);
+      background-image: url("arrow.svg");
+      background-size: cover;
+      background-position: center;
+      will-change: top;
+      animation: down 3s infinite ease;}
+
+      /* Animation for arrow */
+      @keyframes down{
+        0%,100%{top:90%;}
+        50%{top:95%;}
+      }
+
+      /* Wrapper of navigation */
+      #hamburger{height:15%;
+      width:10%;
+      position: absolute;
+      top:0;
+      left:100%;
+      transform: translateX(-100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;}
+
+      /* Lines of navigation button */
+      .line{height:5%;
+      width: 60%;
+      background-color: #ffec4f;
+      margin-bottom: 10%;
+      display: block;
+      }
+
+      /* Main div of navigation */
+      #navigation{height: 0%;
+      width: 100%;
+      background-color: rgb(255, 236, 79,0.6);
+      position: fixed;
+      transition: 0.65s ease;
+      z-index: 9;
+      overflow-y: hidden;
+      }
+
+      /* Close Icon */
+      #close-icon{height:15%;
+      width:10%;
+      background-image: url("cross.svg");
+      background-size: 40% 40%;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top:0;
+      left:100%;
+      transform: translateX(-100%);
+      cursor: pointer;
+      }
+
+      /* Navigation content */
+      #content{height:80%;
+      width:80%;
+      position: relative;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;}
+
+      #content ul{list-style-type: none;}
+
+      /* Links in the navigation */
+      #content ul li a{text-decoration: none;
+      font-family: "Montserrat";
+      font-size: calc(14px + (48 - 14)*(100vmin - 300px)/(800 - 300));
+      color:#333;
+      }
+
+      #content ul li a:hover {color:#000;}
+
+      /* Main ID of second portion */
+      #main-description{height:200%;
+      width:100%;
+      background-color: #660000;
+      position: relative;
+      }
+
+      /* Wrapper of parallax */
+      #wrapper-parallax{height: 50%;
+      width:100%;
+      position: relative;}
+
+
+      /*Background of the parallax*/
+      .parallax-bg{height:100%;
+      width:35%;
+      font-family: "Montserrat";
+      font-size: calc(12px + (25 - 12)*(100vw - 300px) / (800 - 300));
+      color:wheat;
+      }
+
+      .parallax-bg:nth-child(2){position: relative;
+      top:0;
+      left:100%;
+      transform: translateX(-100%);}
+
+      #main-live{height:100%;
+      width:100%;}
+
+      #wrapper-live{height:100%;
+      width:100%;
+      display: flex;
+      flex-direction: row;
+      }
+
+      #live-pic1,#live-pic2{height:100%;
+      width:50%;}
+
+      #live-pic1{background-image: url("https://images.pexels.com/photos/713126/pexels-photo-713126.jpeg");
+      background-size: cover;
+      background-position: center;
+      }
+
+      #live-pic2{display: flex;
+      flex-direction: column;
+      }
+
+      .live-pic2{height:50%;
+      width:100%;
+      background-size: cover;
+      background-position: center;}
+
+      #live-text{height:100%;
+      width:30%;
+      font-family: "Montserrat";
+      font-size: 100px;
+      color:#FFF;
+      position: absolute;
+      top:0;
+      left:0;}
+
+      #live-text2{height:20%;
+      width:20%;
+      font-family: "Montserrat";
+      font-size: 34px;
+      color:#FFF;
+      position: absolute;
+      bottom:0;
+      right: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;}
+
+      .back-block{height:40%;
+      width:100%;
+      background-color: #00264d;}
+
+      /* #wrapper-live{height:80%;
+      width:80%;
+      position: absolute;
+      top:10%;
+      left:50%;
+      transform: translate(-50%,-5%);
+      z-index: 99;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      }
+
+      #wrapper-live::before,#wrapper-live::after{content: '';
+      position: absolute;
+      height: 0%;
+      width:0%;
+      border:2px solid transparent;
+      box-sizing: border-box;
+      background-color:
+      will-change: border-color;
+      }
+
+      #wrapper-live::before{top:0;
+      left:0;
+      }
+
+      #wrapper-live::after{bottom:0;
+      right:0;}
+
+      #wrapper-live:hover::before,#wrapper-live:hover::after{height:100%;
+      width:100%;}
+
+      #wrapper-live:hover::before{border-top-color:red;
+      border-right-color: red;
+      transition:width 0.25s ease-out,height 0.25s ease-out 0.25s;}
+
+      #wrapper-live:hover::after{border-bottom-color:red;
+      border-left-color: red;
+      transition:border 0s ease-out 0.5s,width 0.25s ease-out 0.5s,height 0.25s ease-out 0.75s;} */
+
+      #parallax-image{height:100%;
+      width:100%;
+      background-image: url("http://www.angaarakababs.com/wp-content/uploads/2017/10/maxresdefault-5.jpg");
+      background-size: cover;
+      background-attachment: fixed;}
+
+      #main-contact{height:100%;
+      width:100%;
+      background-color:#660000;}
+
+      #wrapper-contact{height: 90%;
+      width:95%;
+      position: relative;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      display: flex;
+      flex-direction: row;
+
+      }
+
+      #contact-child-1,#contact-child-2{height: 100%;
+      width:50%;
+      font-family: "Montserrat";
+      font-size: 48px;
+      color:#FFF;
+      }
+
+      #main-menu{height:100%;
+      width:100%;}
+
+      #menu-text{height:15%;
+      width:50%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      left:50%;
+      transform: translateX(-50%);
+      font-size:4vmax;
+      font-family: "Montserrat";
+      overflow: hidden;}
+
+      #bottom-line{content:'';
+      height:0;
+      width:0;
+      position: absolute;
+      bottom: 0;
+      left:0;
+      border-bottom: 2px solid transparent;
+      }
+
+      /* #menu-text:hover #bottom-line{border-bottom-color: #000;
+      animation: 1.5s disappear;} */
+
+      @keyframes disappear {
+        0%{height:0;
+        width:0;}
+        45%{left:0;
+        }
+        100%{height:100%;
+        width:100%;
+        left:100%;}
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navigation" style="height:0;">
+      <div id="close-icon" onclick="close_navigation();"></div>
+      <div id="content">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Live Shows</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="main">
+      <div class="back">
+
+      </div>
+      <div id="hamburger" onclick="show_navigation();">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+      <div id="head">
+        <div class="brand">
+          <div id="company">JCB</div>
+          <div id="motto">THE REAL BBQ OF INDIA</div>
+        </div>
+        <div class="brand">
+          <div id="name">JATIN CHUTANI</div>
+        </div>
+        <hr />
+      </div>
+      <a href="#" id="wrapper-arrow-down"><div id="arrow-down"></div></a>
+    </div>
+
+    <div id="main-menu">
+      <div id="menu-text">
+        MENU
+        <div id="bottom-line"></div>
+      </div>
+      <div id="wrapper-menu">
+        <div id="dinner-menu">
+
+        </div>
+        <div id="dessert-menu">
+
+        </div>
+      </div>
+    </div>
+
+
+    <div id="main-live" style="position:relative;">
+      <div class="back" style="position:absolute;"></div>
+      <div id="wrapper-live">
+        <div id="live-pic1"></div>
+        <div id="live-pic2">
+          <div class="live-pic2" style="background-image:url('https://images.pexels.com/photos/756242/pexels-photo-756242.jpeg');"></div>
+          <div class="live-pic2" style="background-image:url('https://images.pexels.com/photos/995301/pexels-photo-995301.jpeg');"></div>
+        </div>
+      </div>
+      <div id="live-text">
+        MUSIC FOR THE SOUL
+      </div>
+      <div id="live-text2">
+        Every Saturday
+        @ JCB
+      </div>
+    </div>
+
+    <div id="main-description">
+      <div class="parallax-image"></div>
+      <div id="wrapper-parallax">
+        <div class="parallax-bg">
+          BBQ OF THE NATION
+        </div>
+        <div class="parallax-bg">
+          SERVING SINCE 1970
+        </div>
+      </div>
+    </div>
+
+    <div id="parallax-image"> </div>
+
+    <div id="main-contact">
+      <div id="wrapper-contact">
+        <div id="contact-child-1">
+          <div id="contact-us">
+            CONTACT US
+          </div>
+        </div>
+        <div id="contact-child-2">
+
+        </div>
+      </div>
+    </div>
+
+    <div id="main-footer">
+      <div>
+
+      </div>
+    </div>
+    <!-- Resources  -->
+    <!-- <div>Icons made by
+    <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+    </div>
+    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Next">Next</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    -->
+
+    <script>
+      // var dishes=["Lunch","Dinner","Berverages"];
+      // var count=-1;
+      // var a =document.querySelector(".dish-overlay div");
+      // var b=document.querySelector(".dish-menu");
+      // console.log(b.length);
+      // a.innerHTML=dishes[++count];
+      //
+      // function show_next(){
+      //   if(count==dishes.length-1)
+      //   {
+      //     count=-1;
+      //   }
+      //   a.innerHTML=dishes[++count];
+      // }
+      //
+      // function show_previous(){
+      //   if(count==0)
+      //   {
+      //     count=3;
+      //   }
+      //   a.innerHTML=dishes[--count];
+      // }
+    </script>
+  </body>
+</html>
