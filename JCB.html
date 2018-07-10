@@ -3,6 +3,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#333">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.6.2/rellax.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.js"></script>
@@ -46,6 +47,7 @@
 
       body{padding:0;
       margin:0;
+      font-size:100%;
       }
 
       /* ID of image */
@@ -54,8 +56,6 @@
       position: relative;
       background-image: url("https://static.pexels.com/photos/533325/pexels-photo-533325.jpeg");
       background-size: cover;
-      min-width: 300px;
-      max-width: 1920px;
       }
 
       .back{height:100%;
@@ -204,7 +204,7 @@
       .parallax-bg{height:100%;
       width:35%;
       font-family: "Montserrat";
-      font-size: calc(12px + (25 - 12)*(100vw - 300px) / (800 - 300));
+      font-size: calc(50px + (100 - 50)*(100vmin - 300px) / (800 - 300));
       color:wheat;
       }
 
@@ -234,6 +234,14 @@
       flex-direction: column;
       }
 
+      /* Image will disappear if the width is below 700px */
+      @media screen and (max-width:700px)
+      {
+        #live-pic2{height: 0;
+        width:0;}
+        #live-pic1{width:100%;}
+      }
+
       .live-pic2{height:50%;
       width:100%;
       background-size: cover;
@@ -242,7 +250,7 @@
       #live-text{height:100%;
       width:30%;
       font-family: "Montserrat";
-      font-size: 100px;
+      font-size:calc(60px + (100 - 50)*(100vmin - 300px) / (800 - 300));
       color:#FFF;
       position: absolute;
       top:0;
@@ -251,7 +259,7 @@
       #live-text2{height:20%;
       width:20%;
       font-family: "Montserrat";
-      font-size: 34px;
+      font-size:calc(17px + (34 - 17)*(100vw - 300px) / (800 - 300));
       color:#FFF;
       position: absolute;
       bottom:0;
