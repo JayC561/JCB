@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#333">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.6.2/rellax.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.css" />
     <script>
@@ -190,7 +189,7 @@
       /* Main ID of second portion */
       #main-description{height:200%;
       width:100%;
-      background-color: #660000;
+      background-color: #130002;
       position: relative;
       }
 
@@ -299,7 +298,7 @@
 
       #main-contact{height:100%;
       width:100%;
-      background-color:#ffec4f;}
+      background-color:#130002;}
 
       #wrapper-contact{height: 90%;
       width:95%;
@@ -316,11 +315,12 @@
       width:50%;
       font-family: "Montserrat";
       font-size: calc(24px + (48 - 24)*(100vw - 300px) / (800 - 300));
-      color:rgba(51, 51, 51, 0.7);
+      color:#FFF;
       }
 
       #main-menu{height:100%;
-      width:100%;}
+      width:100%;
+      position: relative;}
 
       #menu-text{height:15%;
       width:50%;
@@ -333,6 +333,39 @@
       font-size:4vmax;
       font-family: "Montserrat";
       overflow: hidden;}
+
+      #wrapper-menu{height:60%;
+      width:60%;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      }
+
+      #dinner-menu,#dessert-menu{height:100%;
+      width:45%;
+      margin-left: 5%;
+      position: relative;}
+
+      #dessert-menu{background-image: url("https://images.pexels.com/photos/954201/pexels-photo-954201.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;}
+
+      #dinner-menu{background-image: url("https://myfoodstory.com/wp-content/uploads/2017/02/Oven-Baked-Tandoori-Paneer-Tikka-2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;}
+
+      .text-overlay{position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      color:#FFF;
+      font-size: calc(24px + (48 - 24)*(100vw - 300px) / (800 - 300));
+      font-family: "Playlist Script"; }
 
       #bottom-line{content:'';
       height:0;
@@ -399,10 +432,20 @@
       </div>
       <div id="wrapper-menu">
         <div id="dinner-menu">
+          <div class="back">
 
+          </div>
+          <div class="text-overlay">
+            DINNER
+          </div>
         </div>
         <div id="dessert-menu">
+          <div class="back">
 
+          </div>
+          <div class="text-overlay">
+            DESSERT
+          </div>
         </div>
       </div>
     </div>
