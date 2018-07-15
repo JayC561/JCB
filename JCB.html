@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#333">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.css" /> -->
+
     <script>
       $(document).ready(function(){
         $("#wrapper-arrow-down").click(function(){
-          $a=$("#main-description").offset().top;
+          $a=$("#main-menu").offset().top;
           $('body').animate({scrollTop:$a},1000);
         });
       });
@@ -26,9 +29,11 @@
       window.onscroll = function(){
         if(document.body.scrollTop>270)
         {
-          var a = document.querySelector("#bottom-line");
-          a.style.borderColor="#000";
-          a.style.animation="1.5s disappear";
+          setTimeout(function(){
+            var a = document.querySelector("#bottom-line");
+            a.style.borderColor="#000";
+            a.style.animation="1.5s disappear";
+          },1000);
         }
       };
     </script>
@@ -110,7 +115,8 @@
       background-size: cover;
       background-position: center;
       will-change: top;
-      animation: down 3s infinite ease;}
+      animation: down 3s infinite;
+      }
 
       /* Animation for arrow */
       @keyframes down{
@@ -237,9 +243,8 @@
       align-items: center;
       letter-spacing: 2px;}
 
-      #live-text1 div{padding:15px;
+      #live-text1 div{padding: 2%;
       border:2px solid #FFF;
-      margin-left: 3px;
       }
 
       #live-text2{height:40%;
@@ -313,10 +318,16 @@
 
       #contact-child-1,#contact-child-2{height: 100%;
       width:50%;
-      font-family: "Montserrat";
+      font-family: "Montserrat";}
+
+      #contact-us,#book-table{
       font-size: calc(24px + (48 - 24)*(100vw - 300px) / (800 - 300));
       color:#FFF;
+      text-align: center;
       }
+
+      #contact-child-1{padding:1%;
+      border-right:2px solid #FFF;}
 
       #main-menu{height:100%;
       width:100%;
@@ -376,9 +387,6 @@
       border-bottom: 2px solid transparent;
       }
 
-      /* #menu-text:hover #bottom-line{border-bottom-color: #000;
-      animation: 1.5s disappear;} */
-
       @keyframes disappear {
         0%{height:0;
         width:0;}
@@ -388,6 +396,52 @@
         width:100%;
         left:100%;}
       }
+
+      #ui-datepicker-div{background-color: #FFF;
+      border-radius: 3%;
+      font-family: "Montserrat";}
+
+      .ui-state-disabled{color:#660000;}
+
+      #table-booking{height:50%;
+      width:50%;
+      position: relative;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      display: flex;
+      flex-direction: column;}
+
+      .wrapper-table-booking{height:50%;
+      width:100%;
+      display: flex;
+      flex-direction: row;}
+
+      #date,#time,#customer-name,#seats{height:10%;
+      width:30%;
+      font-family: "Montserrat";
+      font-size: calc(5px + (12 - 5)*(100vw - 300px) / (800 - 300));
+      color:#FFF;
+      }
+
+      #table-booking button{height: 20%;
+      width: 50%;
+      font-family: "Montserrat";
+      border: none;
+      background-color: #FFF;
+      }
+
+      #table-booking button:hover{cursor: pointer;}
+
+      .swal-title,.swal-text{font-family: "Montserrat";}
+
+      #contact-details{height:60%;
+      width:70%;
+      background-color: #333;
+      position: relative;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);}
     </style>
   </head>
   <body>
@@ -454,32 +508,13 @@
       <div class="back"></div>
       <div id="wrapper-live">
         <div id="live-text1">
-          MUSIC FOR <div>SOUL</div>
+          MUSIC FOR &nbsp; <div> SOUL</div>
         </div>
         <div id="live-text2">
           EVERY SATURDAY | JCB
         </div>
       </div>
     </div>
-
-<!--
-    <div id="main-live" style="position:relative;">
-      <div class="back" style="position:absolute;"></div>
-      <div id="wrapper-live">
-        <div id="live-pic1"></div>
-        <div id="live-pic2">
-          <div class="live-pic2" style="background-image:url('https://images.pexels.com/photos/756242/pexels-photo-756242.jpeg');"></div>
-          <div class="live-pic2" style="background-image:url('https://images.pexels.com/photos/995301/pexels-photo-995301.jpeg');"></div>
-        </div>
-      </div>
-      <div id="live-text">
-        MUSIC FOR THE SOUL
-      </div>
-      <div id="live-text2">
-        Every Saturday
-        @ JCB
-      </div>
-    </div> -->
 
     <div id="main-description">
       <div class="parallax-image"></div>
@@ -501,9 +536,86 @@
           <div id="contact-us">
             CONTACT US
           </div>
+          <div id="contact-details">
+            <div class="details">
+              <span></span>
+            </div>
+          </div>
         </div>
         <div id="contact-child-2">
+          <div id="book-table">
+            BOOK TABLE
+          </div>
+          <div id="table-booking">
+            <div class="wrapper-table-booking">
+              <div id="customer-name">
+                NAME:
+              </div>
+              <div id="enter-name">
+                <input type="text" style="width:calc(50px + (100 - 50)*(100vw - 300px) / (800 - 300));"/>
+              </div>
+            </div>
 
+            <div class="wrapper-table-booking">
+              <div id="date">
+                DATE:
+              </div>
+              <div id="calendar">
+                <input type="text" style="width:calc(50px + (100 - 50)*(100vw - 300px) / (800 - 300));"/>
+              </div>
+            </div>
+
+            <div class="wrapper-table-booking">
+              <div id="seats">
+                SEATS:
+              </div>
+              <div id="drop-seats">
+                <select style="width:calc(50px + (100 - 50)*(100vw - 300px) / (800 - 300));">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+
+              <div class="wrapper-table-booking">
+                <div id="time">
+                  TIME:
+                </div>
+                <div id="drop-time">
+                  <select style="width:calc(50px + (100 - 50)*(100vw - 300px) / (800 - 300));">
+                     <option value="12AM">12AM</option>
+                     <option value="1AM">1AM</option>
+                     <option value="2AM">2AM</option>
+                     <option value="3AM">3AM</option>
+                     <option value="4AM">4AM</option>
+                     <option value="5AM">5AM</option>
+                     <option value="6AM">6AM</option>
+                     <option value="7AM">7AM</option>
+                     <option value="8AM">8AM</option>
+                     <option value="9AM">9AM</option>
+                     <option value="10AM">10AM</option>
+                     <option value="11AM">11AM</option>
+                     <option value="12NN">12NN</option>
+                     <option value="1PM">1PM</option>
+                     <option value="2PM">2PM</option>
+                     <option value="3PM">3PM</option>
+                     <option value="4PM">4PM</option>
+                     <option value="5PM">5PM</option>
+                     <option value="6PM">6PM</option>
+                     <option value="7PM">7PM</option>
+                     <option value="8PM">8PM</option>
+                     <option value="9PM">9PM</option>
+                     <option value="10PM">10PM</option>
+                     <option value="11PM">11PM</option>
+                  </select>
+                </div>
+              </div>
+              <button onclick="alertFun()">Submit</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -522,28 +634,33 @@
     -->
 
     <script>
-      // var dishes=["Lunch","Dinner","Berverages"];
-      // var count=-1;
-      // var a =document.querySelector(".dish-overlay div");
-      // var b=document.querySelector(".dish-menu");
-      // console.log(b.length);
-      // a.innerHTML=dishes[++count];
-      //
-      // function show_next(){
-      //   if(count==dishes.length-1)
-      //   {
-      //     count=-1;
-      //   }
-      //   a.innerHTML=dishes[++count];
-      // }
-      //
-      // function show_previous(){
-      //   if(count==0)
-      //   {
-      //     count=3;
-      //   }
-      //   a.innerHTML=dishes[--count];
-      // }
+      $(function(){
+        $("#calendar input").datepicker({
+           autoSize: true,
+           maxDate: "5",
+           minDate: "0",
+           hideIfNoPrevNext: true
+        });
+      });
+
+      function alertFun(){
+        var name=document.querySelector("#enter-name input").value;
+        var date=document.querySelector("#calendar input").value;
+        var seats=document.querySelector("#drop-seats select").value;
+        var time=document.querySelector("#drop-time select").value;
+        if(seats>1)
+        {
+            var bookingText="Booking by " + name + " on " + date + " " + time + " for " + seats + " persons" ;
+        }
+        else
+        {
+            var bookingText="Booking by " + name + " on " + date + " " + time + " for " + seats + " person" ;
+        }
+        swal({
+          title: "Table Booked",
+          text: bookingText
+        });
+      }
     </script>
   </body>
 </html>
