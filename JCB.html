@@ -362,7 +362,7 @@
       margin-left: 5%;
       position: relative;}
 
-      #dessert-menu{background-image: url("https://images.pexels.com/photos/954201/pexels-photo-954201.jpeg");
+      #dessert-menu{background-image: url("brownie.jpeg");
       background-size: cover;
       background-repeat: no-repeat;}
 
@@ -424,6 +424,7 @@
       color:#FFF;
       }
 
+
       #table-booking button{height: 20%;
       width: 50%;
       font-family: "Montserrat";
@@ -437,11 +438,32 @@
 
       #contact-details{height:60%;
       width:70%;
-      background-color: #333;
       position: relative;
       top:50%;
       left:50%;
-      transform: translate(-50%,-50%);}
+      transform: translate(-50%,-50%);
+      display: flex;
+      flex-direction: column;
+      }
+
+      .details{height:30%;
+      width:80%;
+      color:#FFF;
+      font-size:calc(5px + (12 - 5)*(100vw - 300px) / (800 - 300));
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      }
+
+      .details a{color:#FFF;
+      text-decoration: none;}
+
+      .details span{height:100%;
+      width:20%;
+      display: block;
+      background-size:40%;
+      background-position: top;
+      background-repeat: no-repeat;}
     </style>
   </head>
   <body>
@@ -537,9 +559,15 @@
             CONTACT US
           </div>
           <div id="contact-details">
+
             <div class="details">
-              <span></span>
+              <span style="background-image:url('pin.svg');"></span> <a target="_blank" href="https://www.google.com/maps/place/Filinvest+Alabang,+Incorporated/@14.4147179,121.0367282,17z/data=!4m5!3m4!1s0x3397d04a21b89fef:0xafe5167234083ea4!8m2!3d14.4146932!4d121.0390028">JayC Tower Alabang Muntinlupa,PH</a>
             </div>
+
+            <div class="details">
+              <span style="background-image:url('phone.svg');"></span> +63 (02) 455-2233
+            </div>
+
           </div>
         </div>
         <div id="contact-child-2">
