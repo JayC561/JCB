@@ -218,6 +218,10 @@
       left:100%;
       transform: translateX(-100%);}
 
+      @media screen and (max-width: 1300px) and (min-width:900px){
+        .parallax-bg{font-size: calc(30px + (100 - 50)*(100vmin - 300px) / (800 - 300));}
+      }
+
       #main-live{height:100%;
       width:100%;
       background-image: url("drums.jpeg");
@@ -241,10 +245,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      letter-spacing: 2px;}
+      letter-spacing: 2px;
+      text-align: center;}
 
       #live-text1 div{padding: 2%;
-      border:2px solid #FFF;
+      border:calc(2px + (3 - 2)*(100vw - 300px) / (800 - 300)) solid #FFF;
       }
 
       #live-text2{height:40%;
@@ -257,6 +262,28 @@
       align-items: center;
       letter-spacing: 2px;}
 
+      @media screen and (max-width:1000px)
+      {
+        #live-text1 div{padding:0;
+        border:none;}
+
+        #main-menu #wrapper-menu{display: flex;
+        flex-direction: column;
+        }
+
+        #main-menu #wrapper-menu #dessert-menu,#main-menu #wrapper-menu #dinner-menu{height:80%;
+        width:100%;
+        margin-bottom:2%;}
+      }
+
+
+      @media screen and (max-width:900px)
+      {
+        .parallax-bg{width:100%;
+          text-align: center;
+        }
+
+      }
       /* #wrapper-live{height:80%;
       width:80%;
       position: absolute;
@@ -530,7 +557,7 @@
       <div class="back"></div>
       <div id="wrapper-live">
         <div id="live-text1">
-          MUSIC FOR &nbsp; <div> SOUL</div>
+          MUSIC FOR &nbsp;<div> SOUL</div>
         </div>
         <div id="live-text2">
           EVERY SATURDAY | JCB
