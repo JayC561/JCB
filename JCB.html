@@ -240,13 +240,13 @@
 
       #live-text1{width:100%;
       font-family: "Montserrat";
-      font-size:calc(50px + (80 - 50)*(100vmin - 300px) / (800 - 300));
+      font-size:calc(30px + (80 - 30)*(100vmin - 300px) / (800 - 300));
       color:#FFF;
       display: flex;
       justify-content: center;
       align-items: center;
       letter-spacing: 2px;
-      text-align: center;}
+      }
 
       #live-text1 div{padding: 2%;
       border:calc(2px + (3 - 2)*(100vw - 300px) / (800 - 300)) solid #FFF;
@@ -255,7 +255,7 @@
       #live-text2{height:40%;
       width:100%;
       font-family: "Montserrat";
-      font-size:calc(5px + (20 - 5)*(100vw - 300px) / (800 - 300));
+      font-size:calc(8px + (20 - 5)*(100vmin - 300px) / (800 - 300));
       color:#FFF;
       display: flex;
       justify-content: center;
@@ -271,11 +271,14 @@
         flex-direction: column;
         }
 
-        #main-menu #wrapper-menu #dessert-menu,#main-menu #wrapper-menu #dinner-menu{height:80%;
-        width:100%;
-        margin-bottom:2%;}
       }
 
+      @media screen and (max-width:750px)
+      {
+        #main-menu #wrapper-menu #dessert-menu,#main-menu #wrapper-menu #dinner-menu{height:80%;
+        width:100%;
+        margin-bottom:5%;}
+      }
 
       @media screen and (max-width:900px)
       {
@@ -284,6 +287,26 @@
         }
 
       }
+
+      @media screen and (max-width:450px)
+      {
+        #main #wrapper-arrow-down{height:0;
+        width:0;
+        display: none;}
+      }
+
+      @media screen and (max-width:650px)
+      {
+        body #main-contact{height:200%;}
+
+        body #main-contact #wrapper-contact{display: flex;
+        flex-direction: column;}
+
+
+        body #main-contact #wrapper-contact #contact-child-1,body #main-contact #wrapper-contact #contact-child-2{width:100%;}
+
+      }
+
       /* #wrapper-live{height:80%;
       width:80%;
       position: absolute;
@@ -353,9 +376,6 @@
       text-align: center;
       }
 
-      #contact-child-1{padding:1%;
-      border-right:2px solid #FFF;}
-
       #main-menu{height:100%;
       width:100%;
       position: relative;}
@@ -393,7 +413,7 @@
       background-size: cover;
       background-repeat: no-repeat;}
 
-      #dinner-menu{background-image: url("https://myfoodstory.com/wp-content/uploads/2017/02/Oven-Baked-Tandoori-Paneer-Tikka-2.jpg");
+      #dinner-menu{background-image: url("dinner.jpg");
       background-size: cover;
       background-repeat: no-repeat;}
 
@@ -447,7 +467,7 @@
       #date,#time,#customer-name,#seats{height:10%;
       width:30%;
       font-family: "Montserrat";
-      font-size: calc(5px + (12 - 5)*(100vw - 300px) / (800 - 300));
+      font-size: calc(8px + (12 - 5)*(100vmin - 300px) / (800 - 300));
       color:#FFF;
       }
 
@@ -455,11 +475,15 @@
       #table-booking button{height: 20%;
       width: 50%;
       font-family: "Montserrat";
-      border: none;
-      background-color: #FFF;
+      border: calc(1px + (3 - 2)*(100vw - 300px) / (800 - 300)) solid #FFF;
+      background-color: transparent;
+      color:#FFF;
+      padding:3%;
       }
 
-      #table-booking button:hover{cursor: pointer;}
+      #table-booking button:hover{cursor: pointer;
+      }
+
 
       .swal-title,.swal-text{font-family: "Montserrat";}
 
@@ -476,7 +500,7 @@
       .details{height:30%;
       width:80%;
       color:#FFF;
-      font-size:calc(5px + (12 - 5)*(100vw - 300px) / (800 - 300));
+      font-size:calc(10px + (24 - 10)*(100vmin - 300px) / (800 - 300));
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -557,7 +581,7 @@
       <div class="back"></div>
       <div id="wrapper-live">
         <div id="live-text1">
-          MUSIC FOR &nbsp;<div> SOUL</div>
+          MUSIC FOR <div> SOUL</div>
         </div>
         <div id="live-text2">
           EVERY SATURDAY | JCB
@@ -616,7 +640,7 @@
                 DATE:
               </div>
               <div id="calendar">
-                <input type="text" style="width:calc(50px + (100 - 50)*(100vw - 300px) / (800 - 300));"/>
+                <input type="text" readonly="true" style="width:calc(50px + (100 - 50)*(100vw - 300px) / (800 - 300));"/>
               </div>
             </div>
 
@@ -668,16 +692,10 @@
                   </select>
                 </div>
               </div>
-              <button onclick="alertFun()">Submit</button>
+              <button onclick="alertFun()">Submit&nbsp;<span>>></span></button>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div id="main-footer">
-      <div>
-
       </div>
     </div>
     <!-- Resources  -->
@@ -686,6 +704,7 @@
     </div>
     <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
     <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Next">Next</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    https://myfoodstory.com/wp-content/uploads/2017/02/Oven-Baked-Tandoori-Paneer-Tikka-2.jpg
     -->
 
     <script>
@@ -699,22 +718,33 @@
       });
 
       function alertFun(){
-        var name=document.querySelector("#enter-name input").value;
-        var date=document.querySelector("#calendar input").value;
-        var seats=document.querySelector("#drop-seats select").value;
-        var time=document.querySelector("#drop-time select").value;
-        if(seats>1)
+         var name = 0, date = 0, seats = 0, time = 0;
+         name=document.querySelector("#enter-name input").value;
+         date=document.querySelector("#calendar input").value;
+         seats=document.querySelector("#drop-seats select").value;
+         time=document.querySelector("#drop-time select").value;
+        if(name==0 || date==0)
         {
-            var bookingText="Booking by " + name + " on " + date + " " + time + " for " + seats + " persons" ;
+          swal({
+            title: "Error",
+            text: "Enter the details"
+          });
         }
         else
         {
-            var bookingText="Booking by " + name + " on " + date + " " + time + " for " + seats + " person" ;
+          if(seats>1)
+          {
+              var bookingText="Booking by " + name + " on " + date + " " + time + " for " + seats + " persons" ;
+          }
+          else
+          {
+              var bookingText="Booking by " + name + " on " + date + " " + time + " for " + seats + " person" ;
+          }
+          swal({
+            title: "Table Booked",
+            text: bookingText
+          });
         }
-        swal({
-          title: "Table Booked",
-          text: bookingText
-        });
       }
     </script>
   </body>
